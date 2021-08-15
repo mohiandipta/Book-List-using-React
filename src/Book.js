@@ -5,15 +5,27 @@ export default class Book extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            count: 1
+            count: 1,
+            name: 'john'
         };
-        this.handleClick = this.handleClick.bind(this)
     }
 
     //event handler
-    handleClick = () => {
-        console.log("you clicked my")
-        console.log(this.state.count)
+    addCount = () => {
+        this.setState({
+            count: this.state.count + 1
+        })
+    }
+
+    lowerCount = () => {
+        this.setState({
+            count: this.state.count - 1
+        })
+    }
+    resetCount = () => {
+        this.setState({
+            count: 0
+        })
     }
 
     render() {
@@ -24,10 +36,17 @@ export default class Book extends Component {
             <section className="book">
                 <img src={img} width="150" alt="book" />
                 <article>
-                    <h3>title : {title}</h3>
-                    <h5>author : {author}</h5>
-                    <button type="button" onClick={this.handleClick}>
-                        add count
+                    <h3>Title : {title}</h3>
+                    <h5>Author : {author}</h5>
+                    <h5>Count : {this.state.count}</h5>
+                    <button type="button" onClick={this.addCount}>
+                        add
+                    </button>
+                    <button type="button" onClick={this.lowerCount}>
+                        lower
+                    </button>
+                    <button type="button" onClick={this.resetCount}>
+                        reset
                     </button>
                 </article>
             </section>
