@@ -1,39 +1,17 @@
 import React, { Component } from 'react';
 import Book from './Book';
+import booksData from './BookData'
 
 class BookList extends Component {
 
-    state = {
-        books: [
-            {
-                id: 1,
-                book: 'Book number one',
-                author: 'john doe',
-                image: 'url'
-            },
-            {
-                id: 2,
-                book: 'Book number two',
-                author: 'bobby doe',
-                image: 'url'
-            },
-            {
-                id: 3,
-                book: 'Book number three',
-                author: 'peter doe',
-                image: 'url'
-            }
-        ]
-    };
+    constructor(props) {
+        super(props)
+        this.state = {
+            books: booksData
+        }
+    }
 
-    //this.setState({})
     render() {
-        // const books = this.state.books.map((item) => item.book);
-        // console.log(books)
-        //filter
-        //forEach
-        //map
-        //reduce
 
         return (
             <section>
