@@ -1,21 +1,12 @@
 import React, { Component } from 'react';
-import { name, age, person } from './data';
-import Banner from './components/Header/Banner';
+import BookList from './BookList';
 
 
-class App extends React.Component {
-  render(h) {
-    return (
-      <section>
-        <Banner />
-        <p>this is my content</p>
-        <p>{name}</p>
-        <p>{age}</p>
-        <p>{person.name}</p>
-        <p>{person.age}</p>
-      </section>
-    );
-  }
-}
+const App = () => (
+  <section>
+    <h1>This is our Application</h1>
+    <BookList />
+  </section>
+);
 
 export default App;
