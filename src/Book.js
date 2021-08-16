@@ -6,6 +6,7 @@ export default class Book extends Component {
         super(props);
         this.state = {
             count: 1,
+            showInfo: true,
         };
     }
 
@@ -27,14 +28,30 @@ export default class Book extends Component {
         })
     }
 
+    handleInfo = () => {
+        this.setState({
+            showInfo: !this.state.showInfo
+        })
+    }
+
     render() {
 
         const { id, img, title, author, } = this.props.info;
         const { handleDelete } = this.props;
+        const checkInfo = (info) => {
+            if (info == true) {
+                return <p>lorem ipsum</p>
+            }
+            else {
+                return null
+            }
+        }
 
         return (
             <section className="book">
-                <img src={img} width="150" alt="book" />
+                <div>
+                    <img src={img} width="150" alt="book" />
+                </div>
                 <article>
                     <h3>Title : {title}</h3>
                     <h5>Author : {author}</h5>
@@ -51,6 +68,8 @@ export default class Book extends Component {
                     <button type="button" onClick={() => { handleDelete(id) }}>
                         delete
                     </button>
+                    <button type="button" onClick={this.handleInfo}>info</button>
+                    {checkInfo(this.state.showInfo)}
                 </article>
             </section>
         );

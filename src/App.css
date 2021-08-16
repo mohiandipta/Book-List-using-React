@@ -9,11 +9,16 @@ article {
   margin-top: -20px;
 }
 
+h5 {
+  color: rgb(146, 145, 145);
+
+}
+
 button {
   height: 25px;
   width: 50px;
   margin: 5px;
-  background-color: crimson;
+  background-color: rgb(220, 157, 20);
   border-radius: 5px;
   border: none;
   color: aliceblue;
