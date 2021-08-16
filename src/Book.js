@@ -6,7 +6,6 @@ export default class Book extends Component {
         super(props);
         this.state = {
             count: 1,
-            name: 'john'
         };
     }
 
@@ -30,7 +29,8 @@ export default class Book extends Component {
 
     render() {
 
-        const { img, title, author, } = this.props.info;
+        const { id, img, title, author, } = this.props.info;
+        const { handleDelete } = this.props;
 
         return (
             <section className="book">
@@ -47,6 +47,9 @@ export default class Book extends Component {
                     </button>
                     <button type="button" onClick={this.resetCount}>
                         reset
+                    </button>
+                    <button type="button" onClick={() => { handleDelete(id) }}>
+                        delete
                     </button>
                 </article>
             </section>
